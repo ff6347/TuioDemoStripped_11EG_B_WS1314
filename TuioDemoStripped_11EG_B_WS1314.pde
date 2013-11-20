@@ -69,6 +69,7 @@ void draw(){
         stroke(0,0,255);
         TuioPoint start_point = (TuioPoint)pointList.firstElement();
         
+        
         for (int j=0;j<pointList.size();j++) {
           
            TuioPoint end_point = (TuioPoint)pointList.elementAt(j);
@@ -77,13 +78,14 @@ void draw(){
            float starty = start_point.getScreenY(height);  
            float endx = end_point.getScreenX(width);
            float endy = end_point.getScreenY(height);
-           line(startx,starty, endx,endy );
+           
+           line(startx,starty, endx,endy);
            start_point = end_point;
         }
         
         stroke(192,192,192);
         fill(192,192,192);
-        ellipse( tcur.getScreenX(width), tcur.getScreenY(height),cur_size,cur_size);
+        ellipse( tcur.getScreenX(width), tcur.getScreenY(height), cur_size, cur_size);
         fill(0);
         text(""+ tcur.getCursorID(),  tcur.getScreenX(width)-5,  tcur.getScreenY(height)+5);
       }
